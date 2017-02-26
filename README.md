@@ -1,7 +1,7 @@
 knockout.js nested/recursive binding
 ============
 
-Kncokout.js does not allow nested binding. It does provides a solution by using knockout components. However in my opinion knockout comkponent has its drawbacks. One of the drawback is that you have to pass the data from the parent data model. Sometimes that is not desired (as shown in the exmaple below). Another drawback is that you to define client side templates. 
+Kncokout.js does not allow nested binding. It does provides a solution by using knockout components. However in my opinion knockout comkponent has its drawbacks. One of the drawback is that you have to pass the data for the components from the parent data model. Sometimes that is not desired (as shown in the exmaple below). Another drawback is that you to define client side templates. If you have been using service side templates all along, it becomes annoying to have templates spreaded on both server and client sides. 
 
 The rbind() function here allows recursive binding of knockout.js without resort to knockout.js templates. Furthermore, child models are independent from parent models, making it extremely easy to insert and remove any self-contained DOM and its model into your code.
 
