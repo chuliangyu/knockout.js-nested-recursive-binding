@@ -44,13 +44,13 @@ The 2nd parameter for rbind() is the DOM, if not provided, rbind will walk throu
 
 How it works
 ============
-rbind() walk through the HTML DOM, find DOM elements that needs to be bound with a model (which has the 'data-model' attributes defined, remove them from the DOM and bind with the specified model, then insert these DOM elements back into the html DOM. 
+rbind() walk through the HTML DOM, find DOM elements that needs to be bound with a model (which have the 'data-model' attributes defined), remove them from the DOM and bind with the specified model, then insert these DOM elements back into the html DOM. 
 
 If a model needs to have access to the DOM it is binded to, it should define a setElement() function. rbind() will call the setElement() and pass the DOM element as the parameter. 
 
 Side effects
 ============
-Because the binded DOM elments are removed and inserted back into the html DOM, the page might appear jumping when it is loaded. There are simpilar issues when using other JS frameworks such as Angular JS.
+Because the binded DOM elments are removed and inserted back into the html DOM, the page might appear jumping when it is loaded. This is a common issue when using client side JS frameworks such as Angular JS.
 
 One way to handle this is to hide the content of the page until the javascript is run. For example:
 
@@ -58,12 +58,12 @@ One way to handle this is to hide the content of the page until the javascript i
 <body>
 	.....
 	<div id="content" class="hidden">
-
+            ....
 	</div>
 	<script>
 		//assuming you are using jquery
 		$(function(){
-			$('#content').removeClass('hidden').removeClass('spinner');
+			$('#content').removeClass('hidden');
 		});
 	</script>
 </body>
