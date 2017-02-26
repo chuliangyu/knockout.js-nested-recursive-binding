@@ -44,7 +44,7 @@ The 2nd parameter for rbind() is the DOM, if not provided, rbind will walk throu
 
 How it works
 ============
-rbind() walk through the HTML DOM, find DOM elements that have the 'data-model' attributes defined, remove them from the DOM and bind with the specified model, then insert these DOM elements back into the html DOM. This is done recursively, so that when a model is binded to a DOM, the nested DOM has been detached from that DOM, thus avoiding the problem of the same DOM being binded more than once, which is not allowed in knockout.js.  
+rbind() walk through the HTML DOM, find DOM elements that have the 'data-model' attributes defined, remove them from the DOM and bind with the specified model, then insert these DOM elements back into the html DOM. This is done recursively, so that when a model is binded to a DOM, the DOMs nested within that DOM that need to ko binded have been detacthed from that DOM, thus avoiding the problem of the same DOM being binded more than once, which is not allowed in knockout.js.  
 
 If a model needs to have access to the DOM it is binded to, it should define a setElement() function. rbind() will call the setElement() and pass the DOM element as the parameter. For example if the 'ajaxForm' needs to know the DOM it is binded to, its code should be like:
 
