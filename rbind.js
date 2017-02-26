@@ -29,7 +29,6 @@ var rbind = function (models, ele){
         });
     };
 
-
     var applyBindings = function(ele){
         if (ele.hasAttribute && ele.hasAttribute('data-model')){
             var attr = ele.getAttribute('data-model');
